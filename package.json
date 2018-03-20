@@ -1,0 +1,22 @@
+{
+  "name": "sugar-form",
+  "version": "0.0.1",
+  "description": "Simplify React event handling with sugar 🍬.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/YiSiWang/sugar-form.git"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": "YiSiWang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YiSiWang/sugar-form/issues"
+  },
+  "homepage": "https://github.com/YiSiWang/sugar-form#readme"
+}
