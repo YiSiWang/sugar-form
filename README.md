@@ -5,10 +5,17 @@
 ```jsx
 import on from 'sugar-form'
 
-<input {...on.keydown.enter.prevent.value(value => dispatch('SUBMIT', value))}/>
+// Listen on keydown and keyup
+<input {...on.keydown.keyup(event => this.handle(event))}/>
+
+// Listen on `enter` key pressed
+<input {...on.keypress.enter(event => this.handle(event))}/>
+
+// Stop propagation and prevent default
+<input {...on.click.stop.prevent(event => this.handle(event))}/>
 ```
 
-## Usage
+## 👉 Usage
 
 ```jsx
 import on from 'sugar-form'
@@ -20,7 +27,7 @@ import on from 'sugar-form'
 <input {...on(arg).sugar.sugar(arg)(listener)}/>
 ```
 
-## Sugars
+## 🍬 Sugars
 
 ### Event binding
 
@@ -28,7 +35,7 @@ import on from 'sugar-form'
 
   Binds `keypress` event.
   
-  *Note: Event name must be CamelCase.*
+  *Note: Event name must be in CamelCase.*
 
 * `on('KeyPress KeyDown')`
 
@@ -70,7 +77,7 @@ import on from 'sugar-form'
 
 ### Keyboard filtering
 
-*Note: These sugars are available for keyboard events.*
+*Note: These sugars are only available for keyboard events.*
 
 * `.key('Enter')`, `.key('Enter Tab')`
 
@@ -118,3 +125,9 @@ import on from 'sugar-form'
 * `.number`
 
   Call your listener with `+event.target.value` instead of `event`.
+
+## 🎩 No magic
+
+Worrying that magic will break your code?
+
+Actually, a sugar is a just function which simply returns an object with `onEventName` (or `onEventNameCapture` if `.capture` specified) properties. There is no magic.
